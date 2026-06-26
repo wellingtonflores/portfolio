@@ -1,6 +1,7 @@
 "use client";
 
 import { Project } from "@/types/project";
+import Image from "next/image";
 import { useState } from "react";
 
 interface DashboardViewerProps {
@@ -20,27 +21,24 @@ export default function DashboardViewer({ project }: DashboardViewerProps) {
 
   return (
     <div className="space-y-8">
-      {/* Power BI Iframe Container */}
+      {/* Power BI Dashboard Preview */}
       <div>
         <div className="flex items-center justify-between mb-4">
           <h2 className="text-lg font-bold text-white flex items-center gap-2">
             <svg className="w-5 h-5 text-cyan-neon" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
             </svg>
-            Relatório Power BI Interativo
+            Relatório Power BI
           </h2>
-          <span className="text-xs text-graphite-500 flex items-center gap-1.5">
-            <span className="w-2 h-2 rounded-full bg-emerald-neon animate-pulse" />
-            Live Preview
-          </span>
         </div>
-        <div className="relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-graphite-950">
-          <iframe
-            className="absolute top-0 left-0 w-full h-full border-0"
-            src={project.embedUrl}
-            allowFullScreen={true}
-            title={project.title}
-            loading="lazy"
+        <div className="relative w-full rounded-2xl overflow-hidden border border-white/10 shadow-2xl bg-graphite-950">
+          <Image
+            src="/powerbiphoto.png"
+            alt={`Dashboard Power BI — ${project.title}`}
+            width={1280}
+            height={720}
+            className="w-full h-auto object-contain"
+            priority
           />
         </div>
       </div>
