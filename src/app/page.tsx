@@ -292,7 +292,7 @@ export default function Home() {
             </div>
             <div className="flex justify-between border-b border-white/5 pb-2">
               <span className="text-graphite-400">Especialidade</span>
-              <span className="text-white font-medium">ETL, SQL, Power BI</span>
+              <span className="text-white font-medium">Python, ETL, SQL, Power BI</span>
             </div>
             <div className="flex justify-between pb-2">
               <span className="text-graphite-400">Status</span>
